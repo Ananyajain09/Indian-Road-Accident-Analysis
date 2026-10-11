@@ -42,22 +42,23 @@ identifying high-risk factors that could inform road-safety policies.
 
 ## 5 Key Insights
 
-1. **Most Accident-Prone City**: Chandigarh with 2577 accidents. Highest fatality rate: Pune at 15.81%.
-2. **Peak Accident Hour**: 2:00 with 888 accidents. Safest hour: 7:00 with 786 accidents.
-3. **Most Dangerous Weather**: 'Fog' has the highest fatality rate at 15.0% (995 fatalities out of 6633 accidents).
-4. **Leading Cause of Casualties**: 'Weather' caused 6953 casualties across 3997 accidents.
-5. **Overall Fatality Rate**: 14.9% -- 2987 fatal out of 20000 total accidents.
+1. **Most Accident-Prone City**: Chandigarh with 2,577 accidents (highest volume among all cities).
+2. **Peak Accident Hour**: 2:00 AM with 888 accidents. Safest hour: 7:00 AM with 786 accidents.
+3. **Leading Cause of Casualties**: 'Weather' caused 6,953 casualties across 3,997 accidents.
+4. **Overall Fatality Rate**: 14.9% — 2,987 fatal out of 20,000 total accidents.
+5. **Fatality Rates Are Nearly Uniform (~15%)**: Across cities, weather conditions, and causes, fatality rates hover around 14–16% with no statistically meaningful variation. This strongly suggests the severity label was assigned randomly during data generation, making fatality-rate comparisons **not meaningful**.
 
 ## Data Quality Notes
 
-These issues suggest the dataset is synthetic:
+These issues confirm the dataset is **synthetic / simulated**:
 
-- **Weather = Clear but Cause = Weather**: 1316 rows (6.6% of data). This is contradictory -- if weather is clear, it probably should not be listed as the cause.
-- **Fatal severity but 0 casualties**: 0 rows. A fatal accident should have at least 1 casualty.
-- **Minor severity but >3 casualties**: 1174 rows. Minor accidents with many casualties seem inconsistent.
-- **Vehicles involved = 0**: 0 rows. An accident needs at least 1 vehicle.
-- **Risk score outside 0-1 range**: 0 rows. Risk score should be between 0 and 1.
-- **Synthetic data indicator**: Severity distribution across cities is suspiciously uniform, consistent with randomly generated data.
+- **Uniform fatality rates**: Every city, weather type, and cause shows ~15% fatality rate — real-world data would show significant variation (e.g., fog being far deadlier than clear skies).
+- **Weather = "Clear" but Cause = "Weather"**: 1,316 rows (6.6% of data). A clear contradiction — clear weather should not be the accident cause.
+- **Minor severity but >3 casualties**: 1,174 rows. Minor accidents with many casualties are logically inconsistent.
+- **Severity distribution across cities is suspiciously uniform**, consistent with randomly generated labels rather than real accident reporting.
+- **No fatal accidents with 0 casualties** and **no vehicles = 0** — these basic sanity checks pass, but the uniformity issues above outweigh them.
+
+> **Bottom line**: This dataset is useful for practising data-pipeline skills (SQL, Python, Power BI) but its findings should **not** be cited as real-world road-safety conclusions.
 
 ## Folder Structure
 
