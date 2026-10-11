@@ -108,7 +108,3 @@ This will clean the data, run SQL queries, generate charts, and create this READ
 ## Dashboard
 
 ![Dashboard](outputs/dashboard.png)
-
----
-
-*Generated automatically by run_all.py on 2026-10-11 15:26*
