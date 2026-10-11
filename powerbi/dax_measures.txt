@@ -1,0 +1,13 @@
+Total Accidents = COUNTROWS(cleaned)
+
+Total Casualties = SUM(cleaned[casualties])
+
+Fatality Rate = DIVIDE(CALCULATE(COUNTROWS(cleaned), cleaned[accident_severity] = "Fatal"), COUNTROWS(cleaned))
+
+Fatal Accidents = CALCULATE(COUNTROWS(cleaned), cleaned[accident_severity] = "Fatal")
+
+Major Accidents = CALCULATE(COUNTROWS(cleaned), cleaned[accident_severity] = "Major")
+
+Minor Accidents = CALCULATE(COUNTROWS(cleaned), cleaned[accident_severity] = "Minor")
+
+Avg Casualties Per Accident = DIVIDE(SUM(cleaned[casualties]), COUNTROWS(cleaned))

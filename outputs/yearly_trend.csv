@@ -1,0 +1,5 @@
+year,total_accidents,total_casualties,prev_year_accidents,yoy_change_pct
+2022,6117,10452,,
+2023,6088,10547,6117.0,-0.47
+2024,6061,10442,6088.0,-0.44
+2025,1734,3088,6061.0,-71.39
